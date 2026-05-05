@@ -18,6 +18,22 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 900) setOpen(false);
+    };
+    window.addEventListener('resize', onResize);
+    onResize();
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
   return (
     <nav
       className="site-nav"
@@ -36,7 +52,7 @@ export default function Nav() {
       </a>
 
       {/* Desktop nav */}
-      <div className="hidden md:flex desktop-nav" style={{ gap: '32px', alignItems: 'center' }}>
+      <div className="desktop-nav" style={{ gap: '32px', alignItems: 'center' }}>
         {links.map(l => (
           <a key={l.href} href={l.href} className="nav-link hover-underline" style={{ textDecoration: 'none' }}>
             {l.label}
@@ -49,7 +65,9 @@ export default function Nav() {
 
       {/* Mobile hamburger */}
       <button
-        className="md:hidden mobile-menu-button"
+        className="mobile-menu-button"
+        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={open}
         onClick={() => setOpen(!open)}
         style={{ background: 'none', border: 'none', cursor: 'none', padding: '8px' }}
       >
@@ -64,9 +82,29 @@ export default function Nav() {
       {open && (
         <div className="mobile-menu" style={{
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(7,11,20,0.98)', zIndex: 99,
+          background: 'var(--bg)', zIndex: 1000,
           display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '32px'
         }}>
+          <button
+            className="mobile-menu-close"
+            aria-label="Close navigation menu"
+            onClick={() => setOpen(false)}
+            style={{
+              position: 'fixed',
+              top: '22px',
+              right: '22px',
+              width: '44px',
+              height: '44px',
+              border: '1px solid var(--border)',
+              background: 'var(--surface)',
+              color: 'var(--accent)',
+              fontSize: '28px',
+              lineHeight: 1,
+              cursor: 'none',
+            }}
+          >
+            ×
+          </button>
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}
               style={{ fontFamily: "'Syne', sans-serif", fontSize: '32px', fontWeight: 700, color: 'var(--text)', textDecoration: 'none', letterSpacing: '0.05em' }}>
