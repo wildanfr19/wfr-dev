@@ -20,6 +20,7 @@ export default function Nav() {
 
   return (
     <nav
+      className="site-nav"
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         padding: scrolled ? '16px 40px' : '24px 40px',
@@ -35,7 +36,7 @@ export default function Nav() {
       </a>
 
       {/* Desktop nav */}
-      <div className="hidden md:flex" style={{ gap: '32px', alignItems: 'center' }}>
+      <div className="hidden md:flex desktop-nav" style={{ gap: '32px', alignItems: 'center' }}>
         {links.map(l => (
           <a key={l.href} href={l.href} className="nav-link hover-underline" style={{ textDecoration: 'none' }}>
             {l.label}
@@ -48,7 +49,7 @@ export default function Nav() {
 
       {/* Mobile hamburger */}
       <button
-        className="md:hidden"
+        className="md:hidden mobile-menu-button"
         onClick={() => setOpen(!open)}
         style={{ background: 'none', border: 'none', cursor: 'none', padding: '8px' }}
       >
@@ -61,7 +62,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div style={{
+        <div className="mobile-menu" style={{
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
           background: 'rgba(7,11,20,0.98)', zIndex: 99,
           display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '32px'

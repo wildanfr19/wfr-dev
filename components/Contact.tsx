@@ -11,7 +11,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" style={{ padding: '120px 40px', background: 'var(--surface)', position: 'relative', overflow: 'hidden' }}>
+    <section id="contact" className="responsive-section" style={{ padding: '120px 40px', background: 'var(--surface)', position: 'relative', overflow: 'hidden' }}>
       {/* Background decorations */}
       <div style={{
         position: 'absolute', top: '-100px', right: '-100px',
@@ -34,7 +34,7 @@ export default function Contact() {
           04 / Contact
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
+        <div className="two-column contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
           {/* Left */}
           <div>
             <h2 className="font-display" style={{ fontSize: 'clamp(32px, 4vw, 64px)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.03em', marginBottom: '24px' }}>
@@ -49,6 +49,7 @@ export default function Contact() {
 
             {/* Email */}
             <div
+              className="contact-email"
               onClick={copyEmail}
               style={{
                 display: 'flex', alignItems: 'center', gap: '16px',
@@ -88,7 +89,7 @@ export default function Contact() {
           </div>
 
           {/* Right — form */}
-          <div style={{
+          <div className="contact-form" style={{
             background: 'var(--bg)',
             border: '1px solid var(--border)',
             padding: '40px',

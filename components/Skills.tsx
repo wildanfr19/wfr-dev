@@ -45,8 +45,8 @@ function SkillBar({ name, level, category, delay }: { name: string; level: numbe
 
   return (
     <div ref={barRef} style={{ marginBottom: '20px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <div className="skill-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+        <div className="skill-label" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span style={{ fontSize: '14px', color: 'var(--text)', fontWeight: 500 }}>{name}</span>
           <span className="tag" style={{ fontSize: '10px' }}>{category}</span>
         </div>
@@ -76,7 +76,7 @@ function SkillBar({ name, level, category, delay }: { name: string; level: numbe
 
 export default function Skills() {
   return (
-    <section id="skills" style={{ padding: '120px 40px', background: 'var(--surface)', position: 'relative' }}>
+    <section id="skills" className="responsive-section" style={{ padding: '120px 40px', background: 'var(--surface)', position: 'relative' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div className="section-line" />
         <p className="font-mono" style={{ fontSize: '12px', color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: '16px', textTransform: 'uppercase' }}>
@@ -87,7 +87,7 @@ export default function Skills() {
           <span style={{ color: 'var(--accent)' }}>Technologies</span>
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
+        <div className="two-column skills-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
           {/* Skill bars */}
           <div>
             <h3 className="font-mono" style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '32px' }}>

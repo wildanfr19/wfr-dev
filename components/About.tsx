@@ -5,8 +5,8 @@ export default function About() {
   const [photoLoaded, setPhotoLoaded] = useState(true);
 
   return (
-    <section id="about" style={{ padding: '120px 40px', maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+    <section id="about" className="responsive-section about-section" style={{ padding: '120px 40px', maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+      <div className="two-column about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
 
         {/* Left - text */}
         <div>
@@ -47,7 +47,7 @@ export default function About() {
             pointerEvents: 'none',
           }} />
 
-          <div style={{
+          <div className="profile-card" style={{
             background: 'var(--surface)',
             border: '1px solid var(--border)',
             padding: '40px',
@@ -98,7 +98,7 @@ export default function About() {
                 { label: 'Focus', value: 'Enterprise Web Systems' },
                 { label: 'Email', value: 'fathurrohmanwildan136@gmail.com' },
               ].map(item => (
-                <div key={item.label} style={{
+                <div key={item.label} className="profile-row" style={{
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                   paddingBottom: '16px', borderBottom: '1px solid var(--border)',
                 }}>

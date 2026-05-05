@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
-    <footer style={{
+    <footer className="site-footer" style={{
       padding: '40px',
       borderTop: '1px solid var(--border)',
       background: 'var(--bg)',
     }}>
-      <div style={{
+      <div className="footer-inner" style={{
         maxWidth: '1200px', margin: '0 auto',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         flexWrap: 'wrap', gap: '16px',

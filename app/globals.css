@@ -137,3 +137,166 @@ body::before {
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .marquee-inner { animation: marquee 25s linear infinite; display: flex; width: max-content; }
 .marquee-inner:hover { animation-play-state: paused; }
+
+@media (pointer: coarse) {
+  body,
+  button,
+  a,
+  input,
+  textarea {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    padding: 18px 20px !important;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-button {
+    display: block !important;
+    position: relative;
+    z-index: 101;
+  }
+
+  .mobile-menu {
+    height: 100dvh !important;
+    padding: 96px 24px 40px !important;
+  }
+
+  .hero-section {
+    min-height: auto !important;
+    padding: 120px 22px 72px !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-content {
+    padding-left: 0 !important;
+  }
+
+  .hero-line,
+  .hero-glow,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  .hero-stats {
+    gap: 24px !important;
+    margin-top: 56px !important;
+    padding-top: 28px !important;
+  }
+
+  .hero-stats > div {
+    min-width: calc(50% - 12px);
+  }
+
+  .responsive-section {
+    padding: 80px 22px !important;
+  }
+
+  .two-column,
+  .project-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .project-card,
+  .profile-card,
+  .contact-form {
+    padding: 24px !important;
+  }
+
+  .project-filters {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .project-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-filters button {
+    flex: 0 0 auto;
+  }
+
+  .skill-row,
+  .skill-label,
+  .contact-email,
+  .profile-row,
+  .footer-inner {
+    align-items: flex-start !important;
+  }
+
+  .skill-row,
+  .contact-email,
+  .profile-row,
+  .footer-inner {
+    flex-direction: column !important;
+  }
+
+  .skill-label {
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+
+  .contact-email {
+    gap: 10px !important;
+    padding: 18px !important;
+  }
+
+  .contact-email > div {
+    width: 100%;
+  }
+
+  .contact-email div,
+  .profile-row span {
+    overflow-wrap: anywhere;
+  }
+
+  .site-footer {
+    padding: 32px 22px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-section h1 {
+    font-size: 52px !important;
+    line-height: 0.98 !important;
+  }
+
+  .hero-section h1 span:last-child {
+    font-size: 44px !important;
+  }
+
+  .hero-section p,
+  .responsive-section p {
+    font-size: 14px !important;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-stats > div {
+    min-width: 100%;
+  }
+
+  .tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}

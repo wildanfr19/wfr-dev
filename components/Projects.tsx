@@ -172,7 +172,7 @@ export default function Projects() {
   const filtered = activeFilter === 'All' ? projects : projects.filter(p => p.category === activeFilter);
 
   return (
-    <section id="projects" style={{ padding: '120px 40px' }}>
+    <section id="projects" className="responsive-section" style={{ padding: '120px 40px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div className="section-line" />
         <p className="font-mono" style={{ fontSize: '12px', color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: '16px', textTransform: 'uppercase' }}>
@@ -183,7 +183,7 @@ export default function Projects() {
             Selected<br />
             <span style={{ color: 'var(--accent)' }}>Work</span>
           </h2>
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="project-filters" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             {['All', 'Enterprise', 'ERP Migration', 'HRIS', 'QA Systems', 'Manufacturing Monitoring', 'Asset Management', 'Security Monitoring'].map(f => (
               <button
                 key={f}
@@ -204,7 +204,7 @@ export default function Projects() {
         </div>
 
         {/* Project grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '24px' }}>
+        <div className="project-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '24px' }}>
           {filtered.map((p, i) => (
             <div key={p.id} className="project-card" style={{ padding: '32px', borderRadius: '2px', opacity: 0, animation: `fadeIn 0.5s ease ${i * 0.1}s forwards` }}
               onAnimationEnd={(e) => { (e.target as HTMLElement).style.opacity = '1'; }}

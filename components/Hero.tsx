@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="grid-bg"
+      className="grid-bg hero-section"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -35,8 +35,8 @@ export default function Hero() {
         width: '500px', height: '500px',
         background: 'radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%)',
         pointerEvents: 'none',
-      }} className="pulse-glow" />
-      <div style={{
+      }} className="pulse-glow hero-glow" />
+      <div className="hero-glow" style={{
         position: 'absolute', bottom: '10%', left: '-10%',
         width: '400px', height: '400px',
         background: 'radial-gradient(circle, rgba(100,255,218,0.04) 0%, transparent 70%)',
@@ -44,12 +44,12 @@ export default function Hero() {
       }} />
 
       {/* Vertical line decoration */}
-      <div style={{
+      <div className="hero-line" style={{
         position: 'absolute', left: '40px', top: '15%', bottom: '15%',
         width: '1px', background: 'linear-gradient(to bottom, transparent, var(--border), transparent)',
       }} />
 
-      <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto', paddingLeft: '32px' }}>
+      <div className="hero-content" style={{ maxWidth: '1200px', width: '100%', margin: '0 auto', paddingLeft: '32px' }}>
         {/* Status indicator */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px' }}>
           <div style={{
@@ -113,13 +113,13 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div style={{
+        <div className="hero-stats" style={{
           display: 'flex', gap: '48px', marginTop: '80px',
           paddingTop: '40px', borderTop: '1px solid var(--border)',
           flexWrap: 'wrap',
         }}>
           {[
-            { num: '14+', label: 'Projects Delivered' },
+            { num: '16+', label: 'Projects Delivered' },
             { num: '5+', label: 'Years Coding' },
             { num: '3', label: 'Enterprise Clients' },
           ].map(s => (
@@ -132,7 +132,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div style={{
+      <div className="scroll-indicator" style={{
         position: 'absolute', bottom: '40px', left: '50%', transform: 'translateX(-50%)',
         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px',
       }}>
