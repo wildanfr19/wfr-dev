@@ -247,6 +247,19 @@ body::before {
     padding: 24px !important;
   }
 
+  .contact-form {
+    padding-top: 48px !important;
+  }
+
+  .contact-form-corner {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .contact-form-title {
+    margin-bottom: 28px !important;
+  }
+
   .project-filters {
     width: 100%;
     overflow-x: auto;

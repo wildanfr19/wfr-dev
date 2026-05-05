@@ -95,13 +95,13 @@ export default function Contact() {
             padding: '40px',
             position: 'relative',
           }}>
-            <div style={{
+            <div className="contact-form-corner" style={{
               position: 'absolute', top: 0, left: 0,
               width: '40px', height: '40px',
               borderRight: '1px solid var(--accent)', borderBottom: '1px solid var(--accent)',
             }} />
 
-            <h3 className="font-display" style={{ fontSize: '20px', fontWeight: 700, marginBottom: '32px' }}>
+            <h3 className="font-display contact-form-title" style={{ fontSize: '20px', fontWeight: 700, marginBottom: '32px' }}>
               Send a Message
             </h3>
 
