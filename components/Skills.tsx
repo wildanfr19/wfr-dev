@@ -1,78 +1,51 @@
 'use client';
-import { useEffect, useRef } from 'react';
 
-const skills = [
-  { name: 'Laravel / PHP / NodeJS / ExpresssJS / NestJS', level: 90, category: 'Backend' },
-  { name: 'MySQL / PostgreSQL / SQLServer / Oracle / Database', level: 88, category: 'Backend' },
-  { name: 'JavaScript / jQuery', level: 82, category: 'Frontend' },
-  { name: 'TypeScript / API Development', level: 78, category: 'Integration' },
-  { name: 'ReactJS', level: 80, category: 'Frontend' },
-  { name: 'Vue JS / Inertia', level: 74, category: 'Frontend' },
-  { name: 'AngularJS', level: 80, category: 'Frontend' },
-  { name: 'Flutter / React Native / Mobile Apps', level: 78, category: 'Mobile' },
-  { name: 'Bootstrap / CSS', level: 85, category: 'Frontend' },
-  { name: 'Python', level: 75, category: 'Tools' },
-  { name: 'Docker / CI/CD Pipeline', level: 70, category: 'DevOps' },
-  { name: 'AJAX / REST API', level: 87, category: 'Integration' },
-  { name: 'Git / Version Control', level: 80, category: 'Tools' },
+const skillGroups = [
+  {
+    title: 'Backend Engineering',
+    desc: 'Build maintainable application logic, APIs, business workflows, and internal systems.',
+    items: ['Laravel', 'PHP', 'Yii', 'NodeJS', 'ExpressJS', 'NestJS', 'Python'],
+  },
+  {
+    title: 'Frontend & UI',
+    desc: 'Create responsive interfaces for dashboards, portals, admin panels, and operational tools.',
+    items: ['ReactJS', 'Vue JS', 'Inertia', 'AngularJS', 'TypeScript', 'JavaScript', 'jQuery'],
+  },
+  {
+    title: 'Mobile Development',
+    desc: 'Develop cross-platform mobile apps for internal operations and customer-facing workflows.',
+    items: ['Flutter', 'React Native', 'REST API Integration', 'NFC Scan', 'QR Code'],
+  },
+  {
+    title: 'Database & Integration',
+    desc: 'Design schemas, optimize queries, migrate data, and connect systems through APIs.',
+    items: ['MySQL', 'PostgreSQL', 'SQL Server', 'Oracle', 'REST API', 'AJAX', 'Data Migration'],
+  },
+  {
+    title: 'DevOps & Delivery',
+    desc: 'Support deployment, collaboration, code versioning, and delivery pipelines.',
+    items: ['Git', 'GitHub', 'Azure Git', 'Docker', 'CI/CD Pipeline', 'Jira', 'Trello'],
+  },
+  {
+    title: 'Business Systems',
+    desc: 'Understand operational needs and translate them into practical business applications.',
+    items: ['ERP', 'HRIS', 'Asset Management', 'QA Monitoring', 'Approval Workflow', 'Reporting'],
+  },
+];
+
+const buildAreas = [
+  { code: 'ERP', title: 'ERP & Enterprise Systems', desc: 'Warehouse, inventory, vendor performance, manufacturing, and internal operation modules.' },
+  { code: 'HR', title: 'HRIS & HR Portals', desc: 'Leave, payroll completion, approval matrix, employee reporting, medroom visit, and HR workflows.' },
+  { code: 'QA', title: 'QA Systems', desc: 'Skill matrix, Flutter NFC scan, inspection room dashboard, OK/NG summaries, and shift monitoring.' },
+  { code: 'OPS', title: 'Monitoring & Support', desc: 'Crack software detection, IT borrow request, asset transfer notification, and production support.' },
 ];
 
 const techStack = [
   'Laravel', 'ReactJS', 'Vue JS', 'Inertia', 'AngularJS', 'MySQL', 'PHP', 'Python', 'jQuery', 'Ajax', 'Bootstrap',
-  'TypeScript', 'Flutter', 'Tailwind', 'Git', 'Docker', 'CI/CD', 'REST API', 'Telegram Bot', 'Midtrans', 'QR Code', 'NFC',
+  'TypeScript', 'Flutter', 'React Native', 'Tailwind', 'Git', 'Docker', 'CI/CD', 'REST API', 'Telegram Bot', 'Midtrans', 'QR Code', 'NFC',
   'Laravel', 'ReactJS', 'Vue JS', 'Inertia', 'AngularJS', 'MySQL', 'PHP', 'Python', 'jQuery', 'Ajax', 'Bootstrap',
-  'TypeScript', 'Flutter', 'Tailwind', 'Git', 'Docker', 'CI/CD', 'REST API', 'Telegram Bot', 'Midtrans', 'QR Code', 'NFC',
+  'TypeScript', 'Flutter', 'React Native', 'Tailwind', 'Git', 'Docker', 'CI/CD', 'REST API', 'Telegram Bot', 'Midtrans', 'QR Code', 'NFC',
 ];
-
-function SkillBar({ name, level, category, delay }: { name: string; level: number; category: string; delay: number }) {
-  const barRef = useRef<HTMLDivElement>(null);
-  const fillRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && fillRef.current) {
-        setTimeout(() => {
-          if (fillRef.current) {
-            fillRef.current.style.transition = 'width 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
-            fillRef.current.style.width = level + '%';
-          }
-        }, delay);
-      }
-    }, { threshold: 0.3 });
-    if (barRef.current) observer.observe(barRef.current);
-    return () => observer.disconnect();
-  }, [level, delay]);
-
-  return (
-    <div ref={barRef} style={{ marginBottom: '20px' }}>
-      <div className="skill-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-        <div className="skill-label" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <span style={{ fontSize: '14px', color: 'var(--text)', fontWeight: 500 }}>{name}</span>
-          <span className="tag" style={{ fontSize: '10px' }}>{category}</span>
-        </div>
-        <span className="font-mono" style={{ fontSize: '12px', color: 'var(--accent)' }}>{level}%</span>
-      </div>
-      <div style={{ height: '4px', background: 'var(--border)', borderRadius: '2px', overflow: 'hidden', position: 'relative' }}>
-        <div
-          ref={fillRef}
-          style={{
-            height: '100%', width: '0%',
-            background: `linear-gradient(90deg, var(--accent), var(--accent-dim))`,
-            borderRadius: '2px',
-            position: 'relative',
-          }}
-        >
-          <div style={{
-            position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)',
-            width: '8px', height: '8px', borderRadius: '50%',
-            background: 'var(--accent)',
-            boxShadow: '0 0 8px var(--accent)',
-          }} />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function Skills() {
   return (
@@ -82,72 +55,54 @@ export default function Skills() {
         <p className="font-mono" style={{ fontSize: '12px', color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: '16px', textTransform: 'uppercase' }}>
           02 / Skills
         </p>
-        <h2 className="font-display" style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, lineHeight: 1.1, marginBottom: '64px', letterSpacing: '-0.02em' }}>
-          Tools &amp;{' '}
-          <span style={{ color: 'var(--accent)' }}>Technologies</span>
+        <h2 className="font-display" style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, lineHeight: 1.1, marginBottom: '24px' }}>
+          Technical<br />
+          <span style={{ color: 'var(--accent)' }}>Capabilities</span>
         </h2>
+        <p style={{ maxWidth: '680px', fontSize: '15px', lineHeight: 1.8, color: 'var(--muted)', marginBottom: '56px' }}>
+          A practical skill set shaped by building and supporting production systems across enterprise web, mobile, ERP, HRIS, QA, and internal operations.
+        </p>
 
-        <div className="two-column skills-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
-          {/* Skill bars */}
-          <div>
-            <h3 className="font-mono" style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '32px' }}>
-              Proficiency
-            </h3>
-            {skills.map((s, i) => (
-              <SkillBar key={s.name} {...s} delay={i * 100} />
-            ))}
-          </div>
-
-          {/* Right - highlights */}
-          <div>
-            <h3 className="font-mono" style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '32px' }}>
-              What I Build
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {[
-                { icon: 'ERP', title: 'ERP & Enterprise Systems', desc: 'Web-based warehouse management, inventory, and manufacturing systems' },
-                { icon: 'HR', title: 'HRIS & HR Portals', desc: 'Employee management, payroll, approval workflows, attendance systems' },
-                { icon: 'QA', title: 'QA Skill Matrix & Inspection Dashboards', desc: 'Flutter NFC skill scans, Laravel 13 APIs, inspector scoring, and OK/NG monitoring' },
-                { icon: 'API', title: 'E-Commerce & APIs', desc: 'Online stores with shipping API integration (Raja Ongkir, Midtrans)' },
-                { icon: 'SEC', title: 'Security & Monitoring', desc: 'Crack/unlicensed software detection with Python agents + Laravel backend' },
-              ].map(item => (
-                <div key={item.title} style={{
-                  padding: '20px', background: 'var(--bg)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '2px', transition: 'border-color 0.2s',
-                }}
-                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(245,166,35,0.3)')}
-                  onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
-                >
-                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                    <span className="font-mono" style={{ fontSize: '11px', color: 'var(--accent)', width: '32px', flexShrink: 0 }}>{item.icon}</span>
-                    <div>
-                      <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text)', marginBottom: '4px' }}>{item.title}</div>
-                      <div style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.6 }}>{item.desc}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+        <div className="skills-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '56px' }}>
+          {skillGroups.map(group => (
+            <div key={group.title} className="project-card skill-card" style={{ padding: '24px', borderRadius: '2px' }}>
+              <h3 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text)', marginBottom: '10px' }}>
+                {group.title}
+              </h3>
+              <p style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.7, marginBottom: '18px' }}>
+                {group.desc}
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {group.items.map(item => (
+                  <span key={item} className="tag">{item}</span>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* Tech marquee */}
+        <div className="build-area-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
+          {buildAreas.map(area => (
+            <div key={area.title} style={{ padding: '20px', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: '2px' }}>
+              <span className="font-mono" style={{ fontSize: '11px', color: 'var(--accent)', display: 'block', marginBottom: '12px' }}>
+                {area.code}
+              </span>
+              <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text)', marginBottom: '6px' }}>
+                {area.title}
+              </div>
+              <p style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.6 }}>
+                {area.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
         <div style={{ marginTop: '80px', overflow: 'hidden', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '20px 0', position: 'relative' }}>
-          <div style={{
-            position: 'absolute', left: 0, top: 0, bottom: 0, width: '80px',
-            background: 'linear-gradient(90deg, var(--surface), transparent)', zIndex: 2,
-          }} />
-          <div style={{
-            position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px',
-            background: 'linear-gradient(-90deg, var(--surface), transparent)', zIndex: 2,
-          }} />
+          <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '80px', background: 'linear-gradient(90deg, var(--surface), transparent)', zIndex: 2 }} />
+          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px', background: 'linear-gradient(-90deg, var(--surface), transparent)', zIndex: 2 }} />
           <div className="marquee-inner">
             {techStack.map((t, i) => (
-              <span key={i} className="font-mono" style={{
-                fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em',
-                padding: '0 24px', whiteSpace: 'nowrap',
-              }}>
+              <span key={i} className="font-mono" style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.1em', padding: '0 24px', whiteSpace: 'nowrap' }}>
                 {t} <span style={{ color: 'var(--accent)', margin: '0 8px' }}>*</span>
               </span>
             ))}

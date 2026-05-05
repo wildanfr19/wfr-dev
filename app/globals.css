@@ -109,6 +109,7 @@ body::before {
 .nav-link:hover { color: var(--accent); }
 .desktop-nav {
   display: flex;
+  gap: 24px !important;
 }
 .mobile-menu-button {
   display: none;
@@ -236,9 +237,17 @@ body::before {
   }
 
   .two-column,
-  .project-grid {
+  .project-grid,
+  .skills-card-grid,
+  .build-area-grid,
+  .experience-layout {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
   }
 
   .project-card,

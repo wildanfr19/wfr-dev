@@ -176,7 +176,7 @@ export default function Projects() {
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div className="section-line" />
         <p className="font-mono" style={{ fontSize: '12px', color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: '16px', textTransform: 'uppercase' }}>
-          03 / Projects
+          04 / Projects
         </p>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '24px' }}>
           <h2 className="font-display" style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em' }}>

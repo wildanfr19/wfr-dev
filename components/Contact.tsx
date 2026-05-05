@@ -31,7 +31,7 @@ export default function Contact() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
         <div className="section-line" />
         <p className="font-mono" style={{ fontSize: '12px', color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: '16px', textTransform: 'uppercase' }}>
-          04 / Contact
+          05 / Contact
         </p>
 
         <div className="two-column contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
