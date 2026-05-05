@@ -190,6 +190,10 @@ body::before {
     z-index: 1002;
   }
 
+  .mobile-menu-button.is-open {
+    display: none !important;
+  }
+
   .mobile-menu {
     height: 100dvh !important;
     padding: 96px 24px 40px !important;

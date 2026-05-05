@@ -66,7 +66,7 @@ export default function Nav() {
 
       {/* Mobile hamburger */}
       <button
-        className="mobile-menu-button"
+        className={`mobile-menu-button ${open ? 'is-open' : ''}`}
         aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={open}
         onClick={() => setOpen(!open)}
