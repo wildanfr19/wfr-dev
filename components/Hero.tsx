@@ -65,7 +65,7 @@ export default function Hero() {
           </a>
           <div className="name-badge">
             <b>Wildan F. R.</b>
-            <small>Laravel · Flutter · React</small>
+            <small>Laravel · Flutter · React · Python · NodeJS</small>
           </div>
         </div>
       </div>
