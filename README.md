@@ -1,6 +1,6 @@
 # Wildan Fathur Rohman — Portfolio
 
-Modern dark-themed portfolio built with **Next.js 16**, TypeScript, and Tailwind CSS.
+Light-themed portfolio with clickable project screenshot galleries, built with **Next.js 16** and TypeScript.
 
 ## Deploy to Vercel
 
@@ -24,9 +24,19 @@ npm run dev
 ```
 
 ## Customize
-- `components/Hero.tsx` — Name, tagline, stats
-- `components/About.tsx` — Bio, details
-- `components/Projects.tsx` — Add/edit projects
-- `components/Skills.tsx` — Skill percentages
+- `lib/projects.ts` — Featured projects (with screenshots) and other project cards
+- `components/Hero.tsx` — Headline, intro, stats
+- `components/Experience.tsx` — Work history, education, quick facts
+- `components/Skills.tsx` — Skill groups
 - `components/Contact.tsx` — Email, social links
-- `app/globals.css` — Change `--accent` color, fonts
+- `app/globals.css` — Colors (`--accent`, `--bg`, ...) and fonts
+
+## Project screenshots
+Raw material lives in `bahan-portfolio/` (git-ignored). To add or reorder screenshots,
+edit `MANIFEST` in `scripts/build-gallery.py` and run:
+
+```bash
+python scripts/build-gallery.py   # needs Pillow
+```
+
+It writes compressed WebP files to `public/projects/<slug>/` and regenerates `lib/gallery.ts`.

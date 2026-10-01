@@ -1,171 +1,163 @@
-'use client';
+import Reveal from './Reveal';
 
 const experiences = [
   {
     company: 'PT Chemco Harapan Nusantara',
+    org: 'Automotive Components Manufacturer · Multi-Plant Operations',
     role: 'Fullstack Engineer',
-    period: 'April 2026 - Present',
+    period: 'Apr 2026 – Present',
+    tech: ['React', 'TypeScript', 'Laravel', 'Flutter', 'Python', 'Node.js', 'Inertia.js', 'WebSocket', 'Oracle JD Edwards', 'Power BI', 'RFID', 'NFC'],
     points: [
-      'Developed and maintained full-stack web applications using Laravel, Yii, PHP, and Python across backend logic and frontend integration.',
-      'Built and maintained cross-platform mobile applications using React Native and Flutter for internal or customer-facing use cases.',
-      'Designed and managed relational databases including MySQL and PostgreSQL, covering schema design, query optimization, and data migration.',
-      'Delivered end-to-end features from requirement analysis to production deployment across web and mobile platforms.',
-      'Ensured code quality, application performance, and system reliability across multiple product lines.',
+      'Designed and delivered an end-to-end RFID warehouse automation platform: a Flutter handheld app, Laravel backend and admin console, and Python middleware for RFID gate hardware. Integrated with Oracle JD Edwards to automatically generate Inventory Transfer and Inventory Receipt records when materials pass the gate, eliminating manual data entry from warehouse to assembly.',
+      'Built a real-time control room dashboard with Laravel, Inertia.js, React, TypeScript and WebSocket, giving departments a single source of truth with live process updates and replacing manual per-shift reporting.',
+      'Developed a production downtime tracking system with Flutter and Laravel, streaming robot downtime data into Power BI to replace spreadsheet logging and help maintenance teams prioritize repairs.',
+      'Developed an NFC-based skill matrix app with Flutter and Laravel: scanning an ID card instantly shows an employee’s competency profile and training history.',
+      'Built an incoming QA inspection app with OK/NG tracking and daily dashboards, replacing paper inspections and giving QC teams a supplier-level audit trail.',
+      'Managed the operational lifecycle of deployed apps (server specification, scheduled backups, monitoring, troubleshooting) with internal targets of ≥99% availability, <30-minute ticket response and zero critical defects.',
     ],
   },
   {
     company: 'PT Indonesia Thai Summit Auto',
-    role: 'IT Staff (Programmer & Support)',
-    period: 'April 2025 - April 2026',
+    org: 'Automotive Stamping & Parts Manufacturer',
+    role: 'Fullstack Developer',
+    period: 'Apr 2025 – Apr 2026',
+    tech: ['Node.js', 'Express.js', 'Laravel', 'Vue.js', 'Python', 'React', 'MySQL', 'SQL Server', 'REST API'],
     points: [
-      'Developed and maintained web-based applications to support business operations.',
-      'Provided technical support, user training, software and hardware request handling.',
-      'Improved and optimized existing systems for better performance and smoother operations.',
+      'Architected and developed ITSA Portal, a central internal platform combining Document Action Request and Asset Management, replacing paper forms and spreadsheets.',
+      'Developed an unlicensed software detection system: a Python scanning agent on company workstations reporting to a Laravel dashboard, automating license-compliance audits that used to be done manually every quarter.',
+      'Developed a dies monitoring system so maintenance can schedule preventive servicing before failures affect production lines.',
+      'Delivered a medical-room visit tracking app with Laravel and Vue.js for the company clinic.',
+      'Provided application support, hardware and software troubleshooting, and end-user training for released systems.',
     ],
   },
   {
-    company: 'PT Pinus Merah Abadi',
+    company: 'PT Pinus Merah Abadi (Nabati Group)',
+    org: 'Major Indonesian FMCG Manufacturer · HR Platform for Multiple Business Units',
     role: 'Fullstack Developer',
-    period: 'Feb 2024 - April 2025',
+    period: 'Feb 2024 – Apr 2025',
+    tech: ['PHP', 'AngularJS', 'JavaScript', 'MySQL', 'REST API', 'Git'],
     points: [
-      'Designed and developed web applications using PHP MVC and AngularJS.',
-      'Built and optimized MySQL databases and integrated RESTful APIs.',
-      'Conducted unit, integration, and end-to-end testing to ensure system quality.',
-      'Collaborated using Git and Trello for version control and project management.',
-      'Delivered new features based on user feedback and business needs.',
+      'Developed 11 HRIS modules for the Nabati Group HC Portal using the company’s proprietary PHP MVC framework and AngularJS.',
+      'Built employee self-service for attendance, leave requests and payroll information, reducing routine requests to HR administrators.',
+      'Ran requirements-gathering sessions with HR stakeholders and translated them into technical specifications.',
+      'Designed and optimized MySQL schemas and REST APIs connecting portal modules; ran unit, integration and end-to-end tests before each release.',
     ],
   },
   {
     company: 'PT 360 Teknologi Indonesia',
-    role: 'PHP Developer',
-    period: 'Dec 2022 - May 2023',
+    org: 'Software Consultancy · ERP Migration Project for Indomaret',
+    role: 'Fullstack Developer',
+    period: 'Dec 2022 – May 2023',
+    tech: ['Laravel', 'Oracle', 'PostgreSQL', 'React', 'Git', 'GitHub'],
     points: [
-      'Checked and verified queries that were still using Oracle.',
-      'Debugged and fixed Laravel query controllers, models, and views.',
-      'Improved stored procedure queries from Oracle Query to Laravel Query Builder.',
-      'Committed, pushed, and merged fixed code to the development branch on GitHub.',
-      'Created daily work timesheets.',
+      'Supported a full ERP database migration from Oracle to PostgreSQL, refactoring Laravel models, controllers and views for the new schema.',
+      'Converted Oracle-specific stored procedures and queries to Laravel Query Builder and PostgreSQL, reducing vendor lock-in.',
+      'Validated migrated queries against the legacy system before cutover, contributing to an on-schedule migration with zero production downtime.',
     ],
   },
   {
     company: 'PT Trimitra Chitrahasta',
-    role: 'IT Staff (Programmer)',
-    period: '2020 - 2022',
+    org: 'Automotive Components Manufacturer · In-House ERP Development',
+    role: 'IT Programmer',
+    period: 'Oct 2020 – Oct 2022',
+    tech: ['Laravel', 'jQuery', 'AJAX', 'MySQL', 'Oracle', 'PostgreSQL', 'Azure Repos', 'Jira'],
     points: [
-      'Designed and built applications according to company needs.',
-      'Maintained, debugged, and documented in-house applications.',
-      'Conducted UAT, presented applications to users, and supported production systems.',
-      'Supported software and hardware issues using Azure Git and Jira for delivery workflows.',
+      'Developed 18 warehouse modules in the company ERP covering inventory management, goods movement and warehouse reporting.',
+      'Contributed to migrating a legacy FoxPro/VB.NET desktop ERP to a web platform, removing per-machine installation.',
+      'Led UAT sessions and system demos with end users before go-live.',
+      'Built an employee suggestion system and an internal e-learning platform for HR training.',
     ],
   },
   {
     company: 'PT Inti Ganda Perdana',
-    role: 'IT Programmer Internship',
-    period: 'Jul 2019 - Jan 2020',
+    org: 'Internship',
+    role: 'IT Programmer — Internship',
+    period: 'Jul 2019 – Jan 2020',
+    tech: [],
     points: [
-      'Assisted in developing ERP sub-modules using Laravel, Ajax, and jQuery.',
-      'Worked with Oracle and PostgreSQL databases.',
-      'Supported ERP spare parts data entry.',
+      'Supported Portal IGP development: relational database design, REST API integration, and unit, integration and end-to-end testing.',
     ],
   },
 ];
 
 const education = [
-  {
-    degree: 'S1 Teknik Informatika',
-    school: 'STMIK Dharma Negara Bandung',
-    period: '2018 - 2020',
-    detail: 'GPA 3.32',
-  },
-  {
-    degree: 'D2 Application Development Professional',
-    school: 'Telecom PDC Karawang',
-    period: '2016 - 2018',
-    detail: 'GPA 3.16',
-  },
+  { degree: 'Bachelor’s Degree (S1), Informatics Engineering', school: 'STMIK Dharma Negara Bandung', period: '2020 – 2022 · GPA 3.32 / 4.00' },
+  { degree: 'Diploma (D2), Professional Application Development', school: 'Telecom PDC Karawang', period: '2018 – 2020 · GPA 3.16 / 4.00' },
+];
+
+const facts = [
+  { label: 'Location', value: 'Indonesia' },
+  { label: 'Industries', value: 'Automotive, FMCG, IT consulting' },
+  { label: 'Specialty', value: 'RFID, NFC & ERP integration' },
+  { label: 'Phone', value: '+62 896 5232 5523' },
+  { label: 'Email', value: 'fathurrohmanwildan136@gmail.com' },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="responsive-section" style={{ padding: '120px 40px', maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-      <div className="section-line" />
-      <p className="font-mono" style={{ fontSize: '12px', color: 'var(--accent)', letterSpacing: '0.2em', marginBottom: '16px', textTransform: 'uppercase' }}>
-        03 / CV
-      </p>
-      <div style={{ display: 'flex', justifyContent: 'space-between', gap: '32px', alignItems: 'flex-end', flexWrap: 'wrap', marginBottom: '56px' }}>
-        <h2 className="font-display" style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, lineHeight: 1.1 }}>
-          Work Experience<br />
-          <span style={{ color: 'var(--accent)' }}>& Education</span>
-        </h2>
-        <p style={{ maxWidth: '420px', fontSize: '14px', lineHeight: 1.8, color: 'var(--muted)' }}>
-          A summary of professional experience, production responsibilities, and formal education behind the portfolio projects.
-        </p>
-      </div>
+    <section id="experience" className="section section-alt">
+      <div className="container">
+        <Reveal className="section-head">
+          <div>
+            <div className="eyebrow">Career</div>
+            <h2 className="section-title">Experience & <em>education</em></h2>
+          </div>
+          <p className="section-lead">
+            5+ years building and maintaining production systems for automotive manufacturing, FMCG and IT consulting.
+          </p>
+        </Reveal>
 
-      <div className="experience-layout" style={{ display: 'grid', gridTemplateColumns: '1.5fr 0.8fr', gap: '40px', alignItems: 'start' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-          {experiences.map((item, index) => (
-            <article key={item.company} className="experience-card" style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '24px', padding: '24px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '2px', position: 'relative' }}>
-              <div>
-                <div className="font-display" style={{ fontSize: '40px', fontWeight: 800, lineHeight: 1, color: 'var(--border)' }}>
-                  {String(index + 1).padStart(2, '0')}
-                </div>
-                <div className="font-mono" style={{ fontSize: '11px', color: 'var(--accent)', marginTop: '12px', lineHeight: 1.5 }}>
-                  {item.period}
-                </div>
-              </div>
-              <div>
-                <h3 className="font-display" style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>
-                  {item.company}
-                </h3>
-                <div className="font-mono" style={{ fontSize: '12px', color: 'var(--muted)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '16px' }}>
-                  {item.role}
-                </div>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px', listStyle: 'none' }}>
-                  {item.points.map(point => (
-                    <li key={point} style={{ fontSize: '13px', lineHeight: 1.7, color: 'var(--muted)', display: 'flex', gap: '10px' }}>
-                      <span style={{ color: 'var(--accent)', flexShrink: 0 }}>*</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
-        </div>
+        <div className="exp-layout">
+          <div className="timeline">
+            {experiences.map((job, i) => (
+              <Reveal key={job.company}>
+                <article className={`job ${i === 0 ? 'current' : ''}`}>
+                  <div className="job-head">
+                    <h3>{job.company}</h3>
+                    <span className="job-period">{job.period}</span>
+                  </div>
+                  <div className="job-org">{job.org}</div>
+                  <div className="job-role">{job.role}</div>
+                  <ul>
+                    {job.points.map(p => <li key={p}>{p}</li>)}
+                  </ul>
+                  {job.tech.length > 0 && (
+                    <div className="tags job-tech">
+                      {job.tech.map(t => <span key={t} className="tag">{t}</span>)}
+                    </div>
+                  )}
+                </article>
+              </Reveal>
+            ))}
+          </div>
 
-        <aside style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-          <div style={{ padding: '24px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '2px' }}>
-            <h3 className="font-display" style={{ fontSize: '22px', fontWeight: 700, marginBottom: '22px' }}>
-              Education
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-              {education.map(item => (
-                <div key={item.degree} style={{ paddingBottom: '18px', borderBottom: '1px solid var(--border)' }}>
-                  <div className="font-mono" style={{ fontSize: '11px', color: 'var(--accent)', marginBottom: '8px' }}>
-                    {item.period}
-                  </div>
-                  <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>
-                    {item.degree}
-                  </div>
-                  <div style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.6 }}>
-                    {item.school}
-                  </div>
-                  <span className="tag" style={{ marginTop: '10px' }}>{item.detail}</span>
+          <aside className="aside">
+            <div className="panel">
+              <h3>Education</h3>
+              {education.map(e => (
+                <div key={e.degree} className="edu">
+                  <b>{e.degree}</b>
+                  <span>{e.school}</span>
+                  <small>{e.period}</small>
                 </div>
               ))}
             </div>
-          </div>
-
-          <div style={{ padding: '24px', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: '2px' }}>
-            <div className="font-mono" style={{ fontSize: '11px', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>
-              Current Focus
+            <div className="panel">
+              <h3>Quick facts</h3>
+              <div className="facts">
+                {facts.map(f => (
+                  <div key={f.label} className="fact">
+                    <span>{f.label}</span>
+                    <span>{f.value}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <p style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.8 }}>
-              Full-stack web and mobile engineering, database optimization, ERP and HRIS workflows, internal operation systems, and production application support.
-            </p>
-          </div>
-        </aside>
+            <a href="/cv/Wildan-Fathur-Rohman-CV.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              Download full CV (PDF)
+            </a>
+          </aside>
+        </div>
       </div>
     </section>
   );

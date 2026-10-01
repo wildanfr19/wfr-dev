@@ -1,11 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { Close, Menu } from './Icons';
 
 const links = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -14,104 +14,53 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
+    const onResize = () => window.innerWidth > 860 && setOpen(false);
+    window.addEventListener('resize', onResize);
     return () => {
       document.body.style.overflow = '';
+      window.removeEventListener('resize', onResize);
     };
   }, [open]);
 
-  useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth > 900) setOpen(false);
-    };
-    window.addEventListener('resize', onResize);
-    onResize();
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
-
   return (
-    <nav
-      className="site-nav"
-      style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        padding: scrolled ? '16px 40px' : '24px 40px',
-        background: scrolled ? 'rgba(7,11,20,0.92)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
-        transition: 'all 0.4s ease',
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      }}
-    >
-      <a href="#" style={{ fontFamily: "'Space Mono', monospace", fontSize: '14px', color: 'var(--accent)', letterSpacing: '0.05em', textDecoration: 'none' }}>
-        WFR<span style={{ color: 'var(--muted)' }}>.dev</span>
-      </a>
-
-      {/* Desktop nav */}
-      <div className="desktop-nav" style={{ gap: '32px', alignItems: 'center' }}>
-        {links.map(l => (
-          <a key={l.href} href={l.href} className="nav-link hover-underline" style={{ textDecoration: 'none' }}>
-            {l.label}
-          </a>
-        ))}
-        <a href="mailto:fathurrohmanwildan136@gmail.com" className="btn-primary" style={{ padding: '8px 20px' }}>
-          Hire Me
+    <nav className={`nav ${scrolled ? 'scrolled' : ''} ${open ? 'open' : ''}`}>
+      <div className="container nav-inner">
+        <a href="#" className="logo" onClick={() => setOpen(false)}>
+          <span className="logo-mark">WFR</span>
+          Wildan Fathur Rohman
         </a>
+
+        <div className="nav-links">
+          {links.map(l => (
+            <a key={l.href} href={l.href} className="nav-link">{l.label}</a>
+          ))}
+          <a href="mailto:fathurrohmanwildan136@gmail.com" className="btn btn-primary btn-sm">Hire me</a>
+        </div>
+
+        <button
+          className="nav-toggle"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <Close /> : <Menu />}
+        </button>
       </div>
 
-      {/* Mobile hamburger */}
-      <button
-        className={`mobile-menu-button ${open ? 'is-open' : ''}`}
-        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
-        aria-expanded={open}
-        onClick={() => setOpen(!open)}
-        style={{ background: 'none', border: 'none', cursor: 'none', padding: '8px' }}
-      >
-        <div style={{ width: '22px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
-          <span style={{ height: '1.5px', background: open ? 'var(--accent)' : 'var(--text)', transition: 'all 0.3s', transform: open ? 'rotate(45deg) translateY(7px)' : 'none', display: 'block' }} />
-          <span style={{ height: '1.5px', background: 'var(--text)', opacity: open ? 0 : 1, transition: 'all 0.3s', display: 'block' }} />
-          <span style={{ height: '1.5px', background: open ? 'var(--accent)' : 'var(--text)', transition: 'all 0.3s', transform: open ? 'rotate(-45deg) translateY(-7px)' : 'none', display: 'block' }} />
-        </div>
-      </button>
-
-      {/* Mobile menu */}
       {open && (
-        <div className="mobile-menu" style={{
-          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'var(--bg)', zIndex: 1000,
-          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '32px'
-        }}>
-          <button
-            className="mobile-menu-close"
-            aria-label="Close navigation menu"
-            onClick={() => setOpen(false)}
-            style={{
-              position: 'fixed',
-              top: '22px',
-              right: '22px',
-              width: '44px',
-              height: '44px',
-              border: '1px solid var(--border)',
-              background: 'var(--surface)',
-              color: 'var(--accent)',
-              fontSize: '28px',
-              lineHeight: 1,
-              cursor: 'none',
-            }}
-          >
-            x
-          </button>
+        <div className="mobile-menu">
           {links.map(l => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}
-              style={{ fontFamily: "'Syne', sans-serif", fontSize: '32px', fontWeight: 700, color: 'var(--text)', textDecoration: 'none', letterSpacing: '0.05em' }}>
-              {l.label}
-            </a>
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
           ))}
+          <a href="mailto:fathurrohmanwildan136@gmail.com" className="btn btn-primary">Hire me</a>
         </div>
       )}
     </nav>

@@ -16,10 +16,11 @@
 # next.js
 /.next/
 /out/
-
+/bahan-portfolio
 # production
 /build
-
+/AGENTS.md
+/CLAUDE.md
 # misc
 .DS_Store
 *.pem
