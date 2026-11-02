@@ -41,8 +41,8 @@ python scripts/build-gallery.py   # needs Pillow
 
 It writes compressed WebP files to `public/projects/<slug>/` and regenerates `lib/gallery.ts`.
 
-RFID warehouse, calibration, skill matrix, inspection room, incoming QA and robot
-downtime screenshots use permanent local blur on sensitive data in both full-size
+RFID warehouse, calibration, skill matrix, inspection room, incoming QA, robot
+downtime and control room screenshots use permanent local blur on sensitive data in both full-size
 images and thumbnails. Reviewed regions are
 stored in `scripts/gallery-redactions.json`, keyed by the original source path.
 Review these regions whenever a source screenshot changes. New source paths in
@@ -61,3 +61,7 @@ python scripts/redact-gallery.py inspection-room incoming-qa robot-problem
 ```
 
 Robot screenshots are read directly from the original PowerPoint presentation.
+
+Regions contain four normalized coordinates and an optional stronger blur radius
+for CCTV footage and charts. Exported image URLs include a content hash so browsers
+request updated files after deployment.

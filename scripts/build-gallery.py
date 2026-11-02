@@ -12,7 +12,7 @@ import shutil
 from pathlib import Path
 
 from PIL import Image, ImageOps
-from gallery_redactions import redact, validate_source
+from gallery_redactions import redact, validate_source, versioned_url
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "bahan-portfolio"
@@ -193,8 +193,8 @@ def main():
             w, h = save(im, OUT / slug / name, FULL_MAX_W, FULL_MAX_H, 82)
             save(im, OUT / slug / "thumbs" / name, THUMB_MAX, THUMB_MAX, 74)
             entries.append({
-                "src": f"/projects/{slug}/{name}",
-                "thumb": f"/projects/{slug}/thumbs/{name}",
+                "src": versioned_url(OUT / slug / name, f"/projects/{slug}/{name}"),
+                "thumb": versioned_url(OUT / slug / 'thumbs' / name, f"/projects/{slug}/thumbs/{name}"),
                 "w": w,
                 "h": h,
                 "group": group,

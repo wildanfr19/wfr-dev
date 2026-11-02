@@ -254,72 +254,72 @@ export const gallery: Record<string, Shot[]> = {
   ],
   "inspection-room": [
     {
-      "src": "/projects/inspection-room/01.webp",
-      "thumb": "/projects/inspection-room/thumbs/01.webp",
+      "src": "/projects/inspection-room/01.webp?v=c4038b19a7e5",
+      "thumb": "/projects/inspection-room/thumbs/01.webp?v=f92568ddf572",
       "w": 1673,
       "h": 940,
       "group": "Web Dashboard",
       "caption": "QA dashboard with KPI cards and filters"
     },
     {
-      "src": "/projects/inspection-room/02.webp",
-      "thumb": "/projects/inspection-room/thumbs/02.webp",
+      "src": "/projects/inspection-room/02.webp?v=6a8e3da825ca",
+      "thumb": "/projects/inspection-room/thumbs/02.webp?v=642d14871704",
       "w": 1671,
       "h": 941,
       "group": "Web Dashboard",
       "caption": "Register items entering the inspection room"
     },
     {
-      "src": "/projects/inspection-room/03.webp",
-      "thumb": "/projects/inspection-room/thumbs/03.webp",
+      "src": "/projects/inspection-room/03.webp?v=6cde9bf1c216",
+      "thumb": "/projects/inspection-room/thumbs/03.webp?v=0b67e3c50c79",
       "w": 1669,
       "h": 942,
       "group": "Web Dashboard",
       "caption": "Progress list with start / complete check actions"
     },
     {
-      "src": "/projects/inspection-room/04.webp",
-      "thumb": "/projects/inspection-room/thumbs/04.webp",
+      "src": "/projects/inspection-room/04.webp?v=a78ee003955d",
+      "thumb": "/projects/inspection-room/thumbs/04.webp?v=c3589990f197",
       "w": 1673,
       "h": 940,
       "group": "Reports",
       "caption": "Daily report per shift"
     },
     {
-      "src": "/projects/inspection-room/05.webp",
-      "thumb": "/projects/inspection-room/thumbs/05.webp",
+      "src": "/projects/inspection-room/05.webp?v=7d850090ed59",
+      "thumb": "/projects/inspection-room/thumbs/05.webp?v=d58d31fb87eb",
       "w": 1546,
       "h": 1017,
       "group": "Reports",
       "caption": "Monthly inspection activity"
     },
     {
-      "src": "/projects/inspection-room/06.webp",
-      "thumb": "/projects/inspection-room/thumbs/06.webp",
+      "src": "/projects/inspection-room/06.webp?v=f4443a7f9acd",
+      "thumb": "/projects/inspection-room/thumbs/06.webp?v=becf37034d19",
       "w": 1673,
       "h": 940,
       "group": "Reports",
       "caption": "Monthly charts per machine"
     },
     {
-      "src": "/projects/inspection-room/07.webp",
-      "thumb": "/projects/inspection-room/thumbs/07.webp",
+      "src": "/projects/inspection-room/07.webp?v=7109500b909b",
+      "thumb": "/projects/inspection-room/thumbs/07.webp?v=6499909ef56a",
       "w": 1785,
       "h": 881,
       "group": "Master Data",
       "caption": "Machine master data"
     },
     {
-      "src": "/projects/inspection-room/08.webp",
-      "thumb": "/projects/inspection-room/thumbs/08.webp",
+      "src": "/projects/inspection-room/08.webp?v=9d05501d5ebd",
+      "thumb": "/projects/inspection-room/thumbs/08.webp?v=14de9687b033",
       "w": 1786,
       "h": 881,
       "group": "Master Data",
       "caption": "User roles"
     },
     {
-      "src": "/projects/inspection-room/09.webp",
-      "thumb": "/projects/inspection-room/thumbs/09.webp",
+      "src": "/projects/inspection-room/09.webp?v=cafc2c452192",
+      "thumb": "/projects/inspection-room/thumbs/09.webp?v=069683e5726e",
       "w": 1796,
       "h": 876,
       "group": "Master Data",
@@ -328,56 +328,56 @@ export const gallery: Record<string, Shot[]> = {
   ],
   "incoming-qa": [
     {
-      "src": "/projects/incoming-qa/01.webp",
-      "thumb": "/projects/incoming-qa/thumbs/01.webp",
+      "src": "/projects/incoming-qa/01.webp?v=64b1d7a3bbbc",
+      "thumb": "/projects/incoming-qa/thumbs/01.webp?v=851fc5fd9093",
       "w": 1666,
       "h": 944,
       "group": "Dashboard",
       "caption": "Dashboard: today's arrivals, pending checks, open problems, OK/NG per part"
     },
     {
-      "src": "/projects/incoming-qa/02.webp",
-      "thumb": "/projects/incoming-qa/thumbs/02.webp",
+      "src": "/projects/incoming-qa/02.webp?v=5ffc3f35e23f",
+      "thumb": "/projects/incoming-qa/thumbs/02.webp?v=09b124ea7f9a",
       "w": 1779,
       "h": 884,
       "group": "Arrivals",
       "caption": "Incoming goods list per supplier"
     },
     {
-      "src": "/projects/incoming-qa/03.webp",
-      "thumb": "/projects/incoming-qa/thumbs/03.webp",
+      "src": "/projects/incoming-qa/03.webp?v=3794f725b091",
+      "thumb": "/projects/incoming-qa/thumbs/03.webp?v=5237dacd9993",
       "w": 1788,
       "h": 880,
       "group": "Arrivals",
       "caption": "Record check result: visual / dimension, mill sheet, qty OK & NG"
     },
     {
-      "src": "/projects/incoming-qa/04.webp",
-      "thumb": "/projects/incoming-qa/thumbs/04.webp",
+      "src": "/projects/incoming-qa/04.webp?v=65ef00c14959",
+      "thumb": "/projects/incoming-qa/thumbs/04.webp?v=f8576766fb84",
       "w": 1791,
       "h": 878,
       "group": "Problem NG",
       "caption": "Log an NG problem with supplier, part and photos"
     },
     {
-      "src": "/projects/incoming-qa/05.webp",
-      "thumb": "/projects/incoming-qa/thumbs/05.webp",
+      "src": "/projects/incoming-qa/05.webp?v=2d18210270e6",
+      "thumb": "/projects/incoming-qa/thumbs/05.webp?v=cfa5b2f7d871",
       "w": 1780,
       "h": 883,
       "group": "Problem NG",
       "caption": "Problem detail"
     },
     {
-      "src": "/projects/incoming-qa/06.webp",
-      "thumb": "/projects/incoming-qa/thumbs/06.webp",
+      "src": "/projects/incoming-qa/06.webp?v=e09ad7c2e427",
+      "thumb": "/projects/incoming-qa/thumbs/06.webp?v=921b8053af70",
       "w": 1782,
       "h": 883,
       "group": "Problem NG",
       "caption": "Corrective analysis; closed problems are locked"
     },
     {
-      "src": "/projects/incoming-qa/07.webp",
-      "thumb": "/projects/incoming-qa/thumbs/07.webp",
+      "src": "/projects/incoming-qa/07.webp?v=41422cd53f99",
+      "thumb": "/projects/incoming-qa/thumbs/07.webp?v=0e1f76df7353",
       "w": 1897,
       "h": 934,
       "group": "Login",
@@ -840,10 +840,10 @@ export const gallery: Record<string, Shot[]> = {
   ],
   "control-room": [
     {
-      "src": "/projects/control-room/01.webp",
-      "thumb": "/projects/control-room/thumbs/01.webp",
-      "w": 1919,
-      "h": 1075,
+      "src": "/projects/control-room/01.webp?v=adde46bb0f4d",
+      "thumb": "/projects/control-room/thumbs/01.webp?v=6b7a5b0e1662",
+      "w": 1675,
+      "h": 939,
       "group": "Dashboard",
       "caption": "Plant performance overview with CCTV AI events and live alerts"
     }

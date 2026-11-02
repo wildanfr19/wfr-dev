@@ -13,7 +13,7 @@ from zipfile import ZipFile
 
 from PIL import Image, ImageOps
 
-from gallery_redactions import REGIONS, redact
+from gallery_redactions import REGIONS, redact, versioned_url
 
 builder = runpy.run_path(str(Path(__file__).with_name('build-gallery.py')))
 
@@ -62,6 +62,8 @@ def main():
                 builder['save'](image, target.parent / 'thumbs' / target.name, builder['THUMB_MAX'], builder['THUMB_MAX'], 74)
                 gallery[slug][index - 1]['w'] = width
                 gallery[slug][index - 1]['h'] = height
+                gallery[slug][index - 1]['src'] = versioned_url(target, f'/projects/{slug}/{target.name}')
+                gallery[slug][index - 1]['thumb'] = versioned_url(target.parent / 'thumbs' / target.name, f'/projects/{slug}/thumbs/{target.name}')
             print(f'{slug}: {len(builder["MANIFEST"][slug])} full-size images and thumbnails exported')
 
     builder['TS_OUT'].write_text(gallery_prefix + gallery_marker + json.dumps(gallery, indent=2, ensure_ascii=False) + ';\n', encoding='utf-8')
