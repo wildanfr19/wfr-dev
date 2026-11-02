@@ -256,72 +256,72 @@ export const gallery: Record<string, Shot[]> = {
     {
       "src": "/projects/inspection-room/01.webp",
       "thumb": "/projects/inspection-room/thumbs/01.webp",
-      "w": 1919,
-      "h": 1079,
+      "w": 1673,
+      "h": 940,
       "group": "Web Dashboard",
       "caption": "QA dashboard with KPI cards and filters"
     },
     {
       "src": "/projects/inspection-room/02.webp",
       "thumb": "/projects/inspection-room/thumbs/02.webp",
-      "w": 1915,
-      "h": 1079,
+      "w": 1671,
+      "h": 941,
       "group": "Web Dashboard",
       "caption": "Register items entering the inspection room"
     },
     {
       "src": "/projects/inspection-room/03.webp",
       "thumb": "/projects/inspection-room/thumbs/03.webp",
-      "w": 1911,
-      "h": 1079,
+      "w": 1669,
+      "h": 942,
       "group": "Web Dashboard",
       "caption": "Progress list with start / complete check actions"
     },
     {
       "src": "/projects/inspection-room/04.webp",
       "thumb": "/projects/inspection-room/thumbs/04.webp",
-      "w": 1916,
-      "h": 1076,
+      "w": 1673,
+      "h": 940,
       "group": "Reports",
       "caption": "Daily report per shift"
     },
     {
       "src": "/projects/inspection-room/05.webp",
       "thumb": "/projects/inspection-room/thumbs/05.webp",
-      "w": 1565,
-      "h": 1029,
+      "w": 1546,
+      "h": 1017,
       "group": "Reports",
       "caption": "Monthly inspection activity"
     },
     {
       "src": "/projects/inspection-room/06.webp",
       "thumb": "/projects/inspection-room/thumbs/06.webp",
-      "w": 1919,
-      "h": 1079,
+      "w": 1673,
+      "h": 940,
       "group": "Reports",
       "caption": "Monthly charts per machine"
     },
     {
       "src": "/projects/inspection-room/07.webp",
       "thumb": "/projects/inspection-room/thumbs/07.webp",
-      "w": 1910,
-      "h": 943,
+      "w": 1785,
+      "h": 881,
       "group": "Master Data",
       "caption": "Machine master data"
     },
     {
       "src": "/projects/inspection-room/08.webp",
       "thumb": "/projects/inspection-room/thumbs/08.webp",
-      "w": 1911,
-      "h": 942,
+      "w": 1786,
+      "h": 881,
       "group": "Master Data",
       "caption": "User roles"
     },
     {
       "src": "/projects/inspection-room/09.webp",
       "thumb": "/projects/inspection-room/thumbs/09.webp",
-      "w": 1908,
-      "h": 931,
+      "w": 1796,
+      "h": 876,
       "group": "Master Data",
       "caption": "Login page"
     }
@@ -330,48 +330,48 @@ export const gallery: Record<string, Shot[]> = {
     {
       "src": "/projects/incoming-qa/01.webp",
       "thumb": "/projects/incoming-qa/thumbs/01.webp",
-      "w": 1904,
-      "h": 1079,
+      "w": 1666,
+      "h": 944,
       "group": "Dashboard",
       "caption": "Dashboard: today's arrivals, pending checks, open problems, OK/NG per part"
     },
     {
       "src": "/projects/incoming-qa/02.webp",
       "thumb": "/projects/incoming-qa/thumbs/02.webp",
-      "w": 1901,
-      "h": 944,
+      "w": 1779,
+      "h": 884,
       "group": "Arrivals",
       "caption": "Incoming goods list per supplier"
     },
     {
       "src": "/projects/incoming-qa/03.webp",
       "thumb": "/projects/incoming-qa/thumbs/03.webp",
-      "w": 1907,
-      "h": 938,
+      "w": 1788,
+      "h": 880,
       "group": "Arrivals",
       "caption": "Record check result: visual / dimension, mill sheet, qty OK & NG"
     },
     {
       "src": "/projects/incoming-qa/04.webp",
       "thumb": "/projects/incoming-qa/thumbs/04.webp",
-      "w": 1919,
-      "h": 940,
+      "w": 1791,
+      "h": 878,
       "group": "Problem NG",
       "caption": "Log an NG problem with supplier, part and photos"
     },
     {
       "src": "/projects/incoming-qa/05.webp",
       "thumb": "/projects/incoming-qa/thumbs/05.webp",
-      "w": 1916,
-      "h": 950,
+      "w": 1780,
+      "h": 883,
       "group": "Problem NG",
       "caption": "Problem detail"
     },
     {
       "src": "/projects/incoming-qa/06.webp",
       "thumb": "/projects/incoming-qa/thumbs/06.webp",
-      "w": 1917,
-      "h": 949,
+      "w": 1782,
+      "h": 883,
       "group": "Problem NG",
       "caption": "Corrective analysis; closed problems are locked"
     },

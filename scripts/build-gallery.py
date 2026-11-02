@@ -78,7 +78,7 @@ MANIFEST = {
     "incoming-qa": [
         ("Dashboard", f"{INCOMING}/Dashboard.png", "Dashboard: today's arrivals, pending checks, open problems, OK/NG per part"),
         ("Arrivals", f"{INCOMING}/List Kedatangan.png", "Incoming goods list per supplier"),
-        ("Arrivals", f"{INCOMING}/Check Kedatangan .png", "Record check result: visual / dimension, mill sheet, qty OK & NG"),
+        ("Arrivals", f"{INCOMING}/Check Kedatangan.png", "Record check result: visual / dimension, mill sheet, qty OK & NG"),
         ("Problem NG", f"{INCOMING}/Input problem NG.png", "Log an NG problem with supplier, part and photos"),
         ("Problem NG", f"{INCOMING}/Detail Problem.png", "Problem detail"),
         ("Problem NG", f"{INCOMING}/Analisa Perbaikan.png", "Corrective analysis; closed problems are locked"),
