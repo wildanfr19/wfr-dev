@@ -24,7 +24,7 @@
 # misc
 .DS_Store
 *.pem
-
+/My JobCycle - Wildan FR
 # debug
 npm-debug.log*
 yarn-debug.log*

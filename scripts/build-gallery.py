@@ -12,6 +12,7 @@ import shutil
 from pathlib import Path
 
 from PIL import Image, ImageOps
+from gallery_redactions import redact, validate_source
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "bahan-portfolio"
@@ -169,6 +170,10 @@ def save(im: Image.Image, path: Path, max_w: int, max_h: int, quality: int):
 
 
 def main():
+    # Fail before clearing the gallery if a protected screenshot lacks review.
+    for slug, items in MANIFEST.items():
+        for _, source, _ in items:
+            validate_source(slug, source)
     tmp = SRC / "__pptx__" / "robot"
     extract_pptx(tmp)
     if OUT.exists():
@@ -182,6 +187,8 @@ def main():
         for i, (group, rel, caption) in enumerate(items, 1):
             src = SRC / rel
             im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
+            im.thumbnail((FULL_MAX_W, FULL_MAX_H), Image.Resampling.LANCZOS)
+            im = redact(slug, rel, im)
             name = f"{i:02d}.webp"
             w, h = save(im, OUT / slug / name, FULL_MAX_W, FULL_MAX_H, 82)
             save(im, OUT / slug / "thumbs" / name, THUMB_MAX, THUMB_MAX, 74)

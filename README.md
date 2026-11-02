@@ -40,3 +40,15 @@ python scripts/build-gallery.py   # needs Pillow
 ```
 
 It writes compressed WebP files to `public/projects/<slug>/` and regenerates `lib/gallery.ts`.
+
+RFID warehouse, calibration and skill matrix screenshots use permanent local blur
+on sensitive data in both full-size images and thumbnails. Reviewed regions are
+stored in `scripts/gallery-redactions.json`, keyed by the original source path.
+Review these regions whenever a source screenshot changes. New source paths in
+these galleries require a privacy review before they can be exported.
+
+To re-export only these three galleries from the ignored originals:
+
+```bash
+python scripts/redact-gallery.py
+```
